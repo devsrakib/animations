@@ -1,11 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import TabNavigator from './tab-navigator';
-import Modal from '../screens/modal';
+import ActivityIndicator from '~/components/ActivityIndicator';
 
 export type RootStackParamList = {
-  TabNavigator: undefined;
+  ActivityIndicator: undefined;
   Modal: undefined;
 };
 
@@ -14,16 +13,11 @@ const Stack = createStackNavigator<RootStackParamList>();
 export default function RootStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TabNavigator">
+      <Stack.Navigator initialRouteName="ActivityIndicator">
         <Stack.Screen
-          name="TabNavigator"
-          component={TabNavigator}
+          name="ActivityIndicator"
+          component={ActivityIndicator}
           options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Modal"
-          component={Modal}
-          options={{ presentation: 'modal', headerLeft: () => null }}
         />
       </Stack.Navigator>
     </NavigationContainer>
