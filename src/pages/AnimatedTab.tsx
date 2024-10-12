@@ -44,7 +44,7 @@ const AnimatedTab = ({
       {data.map((item, index) => {
         const isSelected = selectedIndex === index;
         return (
-          <MotiView layout={LinearTransition.springify().damping(80).stiffness(200)}>
+          <Animated.View layout={LinearTransition.springify().damping(80).stiffness(200)}>
             <Pressable
               onPress={() => onChange(index)}
               style={{
@@ -66,7 +66,7 @@ const AnimatedTab = ({
                 </Animated.Text>
               )}
             </Pressable>
-          </MotiView>
+          </Animated.View>
         );
       })}
     </View>
