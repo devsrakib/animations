@@ -1,16 +1,7 @@
 /* eslint-disable import/order */
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import React, { useEffect, useMemo } from 'react';
-import {
-  BlurMask,
-  Canvas,
-  Circle,
-  Path,
-  rotate,
-  Skia,
-  SweepGradient,
-  vec,
-} from '@shopify/react-native-skia';
+import { BlurMask, Canvas, Path, Skia, SweepGradient, vec } from '@shopify/react-native-skia';
 import Animated, {
   Easing,
   interpolate,
@@ -58,16 +49,16 @@ const ActivityIndicator = () => {
           <Path
             path={circlePath}
             color="white"
-            style={'stroke'}
+            style="stroke"
             strokeWidth={strokeWidth}
             start={startAnimated}
             end={1}
-            strokeCap={'round'}>
+            strokeCap="round">
             <SweepGradient
               c={vec(CanvasSize / 2, CanvasSize / 2)}
               colors={['cyan', 'magenta', 'yellow', 'cyan']}
             />
-            <BlurMask blur={10} style={'solid'} />
+            <BlurMask blur={10} style="solid" />
           </Path>
         </Canvas>
       </Animated.View>
